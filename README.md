@@ -41,7 +41,7 @@ fiches établissements…).
 
 À ce jour, ORI a déjà fait ses preuves côté **information** :
 
-|  💬 Conversations  |  ✉️ Messages échangés  |  🔐 En mode connecté  |
+|  Conversations  |  Messages échangés  |  En mode connecté  |
 |:---:|:---:|:---:|
 | **52 764** | **169 715** | **24 %** |
 
@@ -93,7 +93,7 @@ Pour passer « de l'info à la décision », ORI matérialise l'orientation en u
 
 ## 1.5 Les fonctionnalités
 
-### 💬 Chat ORI — la réponse, sourcée
+### Chat ORI — la réponse, sourcée
 
 Questions Parcoursup, débouchés, formations… ORI répond en s'appuyant sur un **RAG** branché sur
 letudiant.fr, et fait remonter de **vraies fiches métiers** cliquables. La conversation propose des
@@ -103,7 +103,7 @@ letudiant.fr, et fait remonter de **vraies fiches métiers** cliquables. La conv
   <img src="docs/screenshots/03-chat.png" alt="Chat ORI — réponse sourcée avec fiches métiers L'Étudiant" width="680">
 </p>
 
-### 🔥 Explorer — la découverte par le swipe
+### Explorer — la découverte par le swipe
 
 La **navigation innovante** demandée par le brief : un mode « Tinder de l'orientation » sur plusieurs
 thématiques (**métiers, environnement de travail, valeurs, secteurs**). Chaque swipe affine le profil
@@ -116,7 +116,7 @@ sans que l'utilisateur ait à « savoir ce qu'il veut » au départ.
   </tr>
 </table>
 
-### 📅 Événements — le passage à l'action
+### Événements — le passage à l'action
 
 Salons, JPO, forums et webinaires **classés par affinité** avec les intérêts de l'utilisateur
 (badges « Forte affinité »), filtrables par ville / thématique / format, et ajoutables à un **agenda**.
@@ -126,7 +126,7 @@ C'est l'étape qui transforme une intention en **décision concrète**.
   <img src="docs/screenshots/05-evenements.png" alt="Événements classés par affinité avec le profil" width="680">
 </p>
 
-### 👤 Profil — « ce qu'ORI sait de toi »
+### Profil — « ce qu'ORI sait de toi »
 
 La colonne vertébrale, **éditable et transparente** : l'utilisateur déclare qui il est, et ORI lui
 **montre ce qu'il a déduit** de ses swipes (univers de prédilection, métiers qui l'attirent,
