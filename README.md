@@ -73,14 +73,6 @@ autour de la connaissance de l'utilisateur**. Le **profil** est le cœur du prod
 lit pour personnaliser, et l'enrichit en retour**. Plus tu utilises ORI, mieux il t'oriente — et plus
 il te rapproche d'une **décision**, pas seulement d'une réponse.
 
-```mermaid
-flowchart LR
-  D["📊 Dashboard"]      <--> P(("👤 Profil"))
-  C["💬 Chat ORI"]       <--> P
-  X["🔥 Explorer · swipe"] <--> P
-  E["📅 Événements"]     <--> P
-```
-
 Deux principes guident le produit :
 
 - **Souveraineté & confiance** — tout tourne **100 % en local** (modèle + index), **aucune API cloud,
@@ -93,11 +85,6 @@ Deux principes guident le produit :
 Pour passer « de l'info à la décision », ORI matérialise l'orientation en une **démarche guidée en
 5 étapes**, suivie en temps réel sur le dashboard. L'utilisateur voit toujours **où il en est** et
 **quelle est la prochaine action concrète**.
-
-```mermaid
-flowchart LR
-  S1["1 · Se présenter"] --> S2["2 · Explorer ses goûts"] --> S3["3 · Cibler des métiers"] --> S4["4 · Approfondir avec ORI"] --> S5["5 · Passer à l'action"]
-```
 
 <p align="center">
   <img src="docs/screenshots/02-dashboard.png" alt="Dashboard ORI — suivi de la démarche, recommandations et goûts déduits" width="680">
