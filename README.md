@@ -24,9 +24,9 @@
 
 ## Sommaire
 
-1. [**Le produit** — vision business](#1-le-produit--vision-business)
-2. [**Sous le capot** — l'essentiel technique](#2-sous-le-capot--lessentiel-technique)
-3. [**Démarrer** — installer & lancer](#3-démarrer--installer--lancer)
+1. [**Vision business**](#1-le-produit--vision-business)
+2. [**Côté technique**](#2-côté-technique)
+3. [**installer & lancer** ](#3-démarrer--installer--lancer)
 
 ---
 
@@ -148,7 +148,7 @@ environnement, valeurs). Un **taux de complétion** encourage à enrichir le pro
 
 ---
 
-# 2. Sous le capot — l'essentiel technique
+# 2. Côté technique
 
 **Stack** : [Streamlit](https://streamlit.io) (UI) · **RAG maison** sur letudiant.fr · [Ollama](https://ollama.com)
 en local (`gemma3:1b` pour la génération, `nomic-embed-text` pour les embeddings) · `numpy` pour la
