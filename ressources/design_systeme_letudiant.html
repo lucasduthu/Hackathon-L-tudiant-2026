@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System L'Étudiant — Référentiel UI Complet</title>
+    <meta name="description" content="Référentiel interactif du Design System de L'Étudiant (Refonte 2025/2026). Guide complet des couleurs, typographies, boutons et composants UI.">
+    
+    <!-- Google Fonts for Brand Identity -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- L'Étudiant Production Stylesheets -->
+    <link rel="stylesheet" href="https://storage.letudiant.fr/build/etu/dist/assets/app-C-KBU_CA.css">
+    <link rel="stylesheet" href="https://storage.letudiant.fr/build/etu/dist/assets/theme-DG_zjbjc.css">
+    
+    <style>
+        /* Design System Shell Styling (Non-conflicting with L'Etudiant's tw- styles) */
+        :root {
+            --ds-bg-main: #0B0F19;
+            --ds-bg-card: #111827;
+            --ds-bg-sidebar: #0D1321;
+            --ds-border: #1F2937;
+            --ds-text-primary: #F3F4F6;
+            --ds-text-secondary: #9CA3AF;
+            --ds-accent: #E24C38;
+            --ds-accent-hover: #C83A28;
+            --ds-accent-bg: rgba(226, 76, 56, 0.1);
+        }
+
+        body.ds-light-mode {
+            --ds-bg-main: #F9FAFB;
+            --ds-bg-card: #FFFFFF;
+            --ds-bg-sidebar: #F3F4F6;
+            --ds-border: #E5E7EB;
+            --ds-text-primary: #111827;
+            --ds-text-secondary: #4B5563;
+            --ds-accent-bg: rgba(226, 76, 56, 0.05);
+        }
+
+        /* Base styles for DS documentation */
+        .ds-body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--ds-bg-main);
+            color: var(--ds-text-primary);
+            font-family: 'Outfit', 'Inter', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Sidebar navigation */
+        .ds-sidebar {
+            width: 280px;
+            background-color: var(--ds-bg-sidebar);
+            border-right: 1px solid var(--ds-border);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            overflow-y: auto;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .ds-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--ds-border);
+        }
+
+        .ds-logo-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--ds-text-primary);
+        }
+
+        .ds-logo-tag {
+            background-color: var(--ds-accent);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .ds-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ds-nav-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--ds-text-secondary);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+
+        .ds-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            color: var(--ds-text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .ds-nav-item:hover, .ds-nav-item.active {
+            color: var(--ds-text-primary);
+            background-color: var(--ds-accent-bg);
+        }
+
+        .ds-nav-item.active {
+            border-left: 3px solid var(--ds-accent);
+            border-radius: 0 8px 8px 0;
+            padding-left: 11px;
+        }
+
+        /* Main Content Container */
+        .ds-main {
+            margin-left: 280px;
+            flex-grow: 1;
+            padding: 40px;
+            max-width: 1200px;
+            overflow-x: hidden;
+        }
+
+        /* Top header actions */
+        .ds-header-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--ds-border);
+        }
+
+        .ds-btn-mode {
+            background: none;
+            border: 1px solid var(--ds-border);
+            color: var(--ds-text-primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .ds-btn-mode:hover {
+            background-color: var(--ds-accent-bg);
+            border-color: var(--ds-accent);
+        }
+
+        /* Section Layouts */
+        .ds-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 40px;
+        }
+
+        .ds-section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ds-text-primary);
+            border-bottom: 2px solid var(--ds-accent);
+            width: fit-content;
+            padding-bottom: 4px;
+        }
+
+        .ds-section-desc {
+            color: var(--ds-text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        /* Color Palette Grid */
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .ds-color-card {
+            background-color: var(--ds-bg-card);
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ds-color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .ds-color-swatch {
+            height: 120px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .ds-color-copy-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s ease;
+        }
+
+        .ds-color-swatch:hover .ds-color-copy-overlay {
+            opacity: 1;
+        }
+
+        .ds-color-info {
+            padding: 16px;
+        }
+
+        .ds-color-name {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--ds-text-primary);
+        }
+
+        .ds-color-hex {
+            font-family: monospace;
+            font-size: 14px;
+            color: var(--ds-text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ds-color-class {
+            margin-top: 8px;
+            background-color: var(--ds-accent-bg);
+            color: var(--ds-accent);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            width: fit-content;
+            font-family: monospace;
+        }
+
+        /* Showcase box */
+        .ds-showcase-box {
+            background-color: var(--ds-bg-card);
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .ds-showcase-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--ds-text-secondary);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tabs and code toggler */
+        .ds-code-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 1px solid var(--ds-border);
+            color: var(--ds-text-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .ds-code-toggle:hover {
+            color: var(--ds-text-primary);
+            border-color: var(--ds-accent);
+        }
+
+        .ds-code-block {
+            display: none;
+            margin-top: 20px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .ds-code-block code {
+            display: block;
+            white-space: pre-wrap;
+        }
+
+        .ds-code-block-copy {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #cbd5e1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .ds-code-block-copy:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        /* Typography display styles */
+        .ds-typo-row {
+            display: flex;
+            border-bottom: 1px solid var(--ds-border);
+            padding: 16px 0;
+            align-items: center;
+        }
+        
+        .ds-typo-meta {
+            width: 250px;
+            font-size: 13px;
+            color: var(--ds-text-secondary);
+            font-family: monospace;
+        }
+
+        .ds-typo-preview {
+            flex-grow: 1;
+        }
+
+        /* Copy Toast notification */
+        .ds-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--ds-accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 9999;
+        }
+
+        .ds-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ds-bg-main);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ds-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--ds-text-secondary);
+        }
+
+        /* Helper spacing classes in previews */
+        .ds-preview-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .ds-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="ds-body">
+
+    <!-- Toast Notification -->
+    <div id="ds-toast" class="ds-toast">Copié dans le presse-papiers !</div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="ds-sidebar">
+        <div class="ds-logo-area">
+            <img src="https://storage.letudiant.fr/build/etu/dist/assets/images/svg/logo/letudiant-white.svg" style="background-color: #e71336; padding: 6px; border-radius: 4px;" width="100" height="24" alt="Logo L'Etudiant">
+            <div>
+                <span class="ds-logo-text">Design System</span>
+                <span class="ds-logo-tag">Refonte v2</span>
+            </div>
+        </div>
+        
+        <nav class="ds-nav">
+            <span class="ds-nav-title">Fondations</span>
+            <a href="#intro" class="ds-nav-item active" onclick="setActiveNav(this)"><i class="fa-solid fa-circle-info"></i> Introduction</a>
+            <a href="#colors" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-palette"></i> Couleurs</a>
+            <a href="#typography" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-font"></i> Typographie</a>
+            
+            <span class="ds-nav-title">Composants Élémentaires</span>
+            <a href="#buttons" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-square-caret-right"></i> Boutons</a>
+            <a href="#inputs" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-keyboard"></i> Formulaires & Inputs</a>
+            <a href="#badges" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-tags"></i> Badges & Tags</a>
+            
+            <span class="ds-nav-title">Composants Complexes</span>
+            <a href="#cards" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-id-card"></i> Cartes d'Articles</a>
+            <a href="#layouts" class="ds-nav-item" onclick="setActiveNav(this)"><i class="fa-solid fa-window-maximize"></i> En-tête & Pied de page</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="ds-main">
+        
+        <!-- Header Actions -->
+        <div class="ds-header-actions">
+            <button class="ds-btn-mode" onclick="toggleTheme()">
+                <i id="theme-icon" class="fa-solid fa-sun"></i> Mode Clair/Sombre
+            </button>
+        </div>
+
+        <!-- SECTION: Introduction -->
+        <section id="intro" class="ds-section">
+            <h1 class="ds-section-title">Introduction</h1>
+            <p class="ds-section-desc">
+                Ce référentiel UI documente les fondations et composants du design system de <strong>L'Étudiant</strong> (Refonte 2025/2026).
+                Il s'appuie sur une implémentation basée sur <strong>Tailwind CSS</strong> avec le préfixe unique <code>tw-</code> pour éviter toute collision
+                avec d'autres feuilles de style. Toutes les démonstrations de composants présentées ici utilisent les véritables classes de production
+                et importent les fichiers CSS officiels de L'Étudiant.
+            </p>
+            
+            <div class="ds-showcase-box" style="background-color: var(--ds-accent-bg); border-color: rgba(226, 76, 56, 0.3);">
+                <h4 style="margin-top: 0; color: var(--ds-accent); font-weight: 700; font-size: 18px;">Intégration Directe en Production</h4>
+                <p style="font-size: 14px; line-height: 1.6; margin-bottom: 0;">
+                    Pour utiliser ce design system, importez les feuilles de style suivantes dans votre projet HTML :
+                </p>
+                <pre style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 12px; margin-top: 10px; font-family: monospace; color: var(--ds-text-primary);">
+&lt;link rel="stylesheet" href="https://storage.letudiant.fr/build/etu/dist/assets/app-C-KBU_CA.css"&gt;
+&lt;link rel="stylesheet" href="https://storage.letudiant.fr/build/etu/dist/assets/theme-DG_zjbjc.css"&gt;</pre>
+            </div>
+        </section>
+
+        <!-- SECTION: Colors -->
+        <section id="colors" class="ds-section">
+            <h2 class="ds-section-title">Couleurs</h2>
+            <p class="ds-section-desc">
+                La palette colorimétrique de L'Étudiant est structurée autour d'une couleur principale dynamique (le <strong>Tomato</strong>)
+                et d'une échelle sombre et profonde (la gamme <strong>Night</strong>), complétées par des couleurs thématiques secondaires associées aux différentes
+                sections éditoriales (Orientation, Alternance, Santé, Collège). <em>Cliquez sur une couleur pour copier sa valeur Hex.</em>
+            </p>
+
+            <h3 style="margin-bottom: 16px; font-size: 18px; font-weight: 700;">Couleurs Principales (Brand Colors)</h3>
+            <div class="ds-color-grid" style="margin-bottom: 40px;">
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #e71336;" onclick="copyToClipboard('#e71336')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Tomato (Red)</div>
+                        <div class="ds-color-hex">#e71336</div>
+                        <div class="ds-color-class">tw-bg-tomato</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #1b232b;" onclick="copyToClipboard('#1b232b')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Night 600</div>
+                        <div class="ds-color-hex">#1b232b</div>
+                        <div class="ds-color-class">tw-bg-night-600</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #272e36;" onclick="copyToClipboard('#272e36')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Night 500</div>
+                        <div class="ds-color-hex">#272e36</div>
+                        <div class="ds-color-class">tw-bg-night-500</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #333a41;" onclick="copyToClipboard('#333a41')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Night 400</div>
+                        <div class="ds-color-hex">#333a41</div>
+                        <div class="ds-color-class">tw-bg-night-400</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px; font-size: 18px; font-weight: 700;">Couleurs de Rubriques & Fonctionnelles</h3>
+            <div class="ds-color-grid">
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #0597f2;" onclick="copyToClipboard('#0597f2')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Orientation Blue</div>
+                        <div class="ds-color-hex">#0597f2</div>
+                        <div class="ds-color-class">tw-bg-ori</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #c0df16;" onclick="copyToClipboard('#c0df16')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Apple (Green)</div>
+                        <div class="ds-color-hex">#c0df16</div>
+                        <div class="ds-color-class">tw-bg-apple</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #ffb600;" onclick="copyToClipboard('#ffb600')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Citrus (Yellow)</div>
+                        <div class="ds-color-hex">#ffb600</div>
+                        <div class="ds-color-class">tw-bg-citrus</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #ef4b81;" onclick="copyToClipboard('#ef4b81')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Raspberry (Pink)</div>
+                        <div class="ds-color-hex">#ef4b81</div>
+                        <div class="ds-color-class">tw-bg-raspberry</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #ff6a14;" onclick="copyToClipboard('#ff6a14')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Spritz (Orange)</div>
+                        <div class="ds-color-hex">#ff6a14</div>
+                        <div class="ds-color-class">tw-bg-spritz</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #0085bf;" onclick="copyToClipboard('#0085bf')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Pool (Cyan)</div>
+                        <div class="ds-color-hex">#0085bf</div>
+                        <div class="ds-color-class">tw-bg-pool</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #00a82d;" onclick="copyToClipboard('#00a82d')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Mint (Green)</div>
+                        <div class="ds-color-hex">#00a82d</div>
+                        <div class="ds-color-class">tw-bg-mint</div>
+                    </div>
+                </div>
+
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background-color: #d8dadb;" onclick="copyToClipboard('#d8dadb')">
+                        <div class="ds-color-copy-overlay"><i class="fa-solid fa-copy"></i> Copier</div>
+                    </div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Stone 100 (Gray)</div>
+                        <div class="ds-color-hex">#d8dadb</div>
+                        <div class="ds-color-class">tw-tw-border-stone-100</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Typography -->
+        <section id="typography" class="ds-section">
+            <h2 class="ds-section-title">Typographie</h2>
+            <p class="ds-section-desc">
+                L'identité visuelle de L'Étudiant combine <strong>Barlow Condensed</strong> pour les titres accrocheurs (rubriques, zones, grands titres)
+                et <strong>Outfit</strong> ou <strong>Atkinson Hyperlegible</strong> pour une lisibilité accrue dans les contenus textuels et la navigation.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-typo')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">Aperçu Typographique</div>
+                
+                <div class="ds-typo-row">
+                    <div class="ds-typo-meta">
+                        Font: Barlow Condensed (600)<br>
+                        Class: tw-font-display tw-text-title-xs
+                    </div>
+                    <div class="ds-typo-preview">
+                        <p class="tw-font-display tw-text-title-xs tw-font-semibold tw-text-night-600">Retrouver toutes nos rubriques</p>
+                    </div>
+                </div>
+
+                <div class="ds-typo-row">
+                    <div class="ds-typo-meta">
+                        Font: Barlow Condensed (700)<br>
+                        Class: zone-title
+                    </div>
+                    <div class="ds-typo-preview">
+                        <h2 class="zone-title tw-text-night-600">Les tests d'orientation phares</h2>
+                    </div>
+                </div>
+
+                <div class="ds-typo-row">
+                    <div class="ds-typo-meta">
+                        Font: Outfit (700)<br>
+                        Class: tw-font-bold tw-text-lg
+                    </div>
+                    <div class="ds-typo-preview">
+                        <p class="tw-font-bold tw-text-lg tw-text-night-600">Texte fort et titres d'articles secondaires</p>
+                    </div>
+                </div>
+
+                <div class="ds-typo-row">
+                    <div class="ds-typo-meta">
+                        Font: Atkinson Hyperlegible (400)<br>
+                        Class: tw-font-body tw-text-sm
+                    </div>
+                    <div class="ds-typo-preview">
+                        <p class="tw-font-body tw-text-sm tw-text-night-400">
+                            Ceci est le texte de paragraphe par défaut utilisé pour les descriptions d'articles et les contenus d'aide à l'orientation. 
+                            Atkinson Hyperlegible a été spécialement conçu pour améliorer la lisibilité et aider les lecteurs malvoyants.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="code-typo" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;!-- Titre Display Rubrique --&gt;
+&lt;p class="tw-font-display tw-text-title-xs tw-font-semibold tw-text-night-600"&gt;Retrouver toutes nos rubriques&lt;/p&gt;
+
+&lt;!-- Titre de Zone --&gt;
+&lt;h2 class="zone-title tw-text-night-600"&gt;Les tests d'orientation phares&lt;/h2&gt;
+
+&lt;!-- Titre secondaire --&gt;
+&lt;p class="tw-font-bold tw-text-lg tw-text-night-600"&gt;Texte fort et titres d'articles&lt;/p&gt;
+
+&lt;!-- Texte de paragraphe par défaut --&gt;
+&lt;p class="tw-font-body tw-text-sm tw-text-night-400"&gt;Texte de paragraphe courant...&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Buttons -->
+        <section id="buttons" class="ds-section">
+            <h2 class="ds-section-title">Boutons</h2>
+            <p class="ds-section-desc">
+                Les boutons de L'Étudiant possèdent des formes rectangulaires et épurées avec de très faibles arrondis (<code>tw-rounded-sm</code>).
+                Ils se déclinent en fonds pleins ou contourés selon la hiérarchie de l'action.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-buttons')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">Variations de boutons</div>
+                
+                <div class="ds-preview-flex">
+                    <!-- Button Connexion (Night theme style) -->
+                    <button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-night-600 tw-text-white hover:tw-bg-night-500">
+                        Bouton Primaire Night
+                    </button>
+
+                    <!-- Button Connexion (White outline style) -->
+                    <button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-white tw-text-night-600 tw-border tw-border-night-600 hover:tw-bg-stone-50">
+                        Bouton Contour
+                    </button>
+
+                    <!-- Button Tomato -->
+                    <button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-tomato tw-text-white hover:tw-bg-red-500">
+                        Action Importante Tomato
+                    </button>
+
+                    <!-- Button Disabled -->
+                    <button disabled class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-stone-100 tw-text-night-300 cursor-not-allowed">
+                        Bouton Désactivé
+                    </button>
+                </div>
+
+                <div id="code-buttons" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;!-- Bouton Night --&gt;
+&lt;button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-night-600 tw-text-white hover:tw-bg-night-500"&gt;
+    Bouton Primaire Night
+&lt;/button&gt;
+
+&lt;!-- Bouton Contour --&gt;
+&lt;button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-white tw-text-night-600 tw-border tw-border-night-600 hover:tw-bg-stone-50"&gt;
+    Bouton Contour
+&lt;/button&gt;
+
+&lt;!-- Bouton Tomato --&gt;
+&lt;button class="tw-justify-center tw-items-center tw-font-bold tw-transition tw-duration-200 tw-ease-linear focus:tw-transition-none focus:tw-outline focus:tw-outline-2 focus:tw-outline-offset-2 tw-text-sm tw-rounded-sm tw-px-4 tw-gap-1 tw-h-9 tw-bg-tomato tw-text-white hover:tw-bg-red-500"&gt;
+    Action Importante Tomato
+&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Inputs -->
+        <section id="inputs" class="ds-section">
+            <h2 class="ds-section-title">Formulaires & Inputs</h2>
+            <p class="ds-section-desc">
+                Les champs de recherche et formulaires utilisent des angles peu arrondis, des bordures fines de couleur <code>stone-300</code>,
+                et passent sur des bordures plus sombres au focus.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-inputs')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">Exemples de champs</div>
+                
+                <div style="max-width: 400px; display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Search Input Wrapper -->
+                    <div>
+                        <label class="tw-block tw-text-xs tw-font-bold tw-text-night-600 tw-mb-1">BARRE DE RECHERCHE</label>
+                        <div class="tw-relative tw-flex tw-items-center">
+                            <input type="search" placeholder="Rechercher une école, une formation..." class="tw-w-full tw-h-10 tw-pl-4 tw-pr-10 tw-border tw-border-stone-300 tw-rounded-sm tw-text-sm focus:tw-outline-none focus:tw-border-night-600">
+                            <span class="tw-absolute tw-right-3 tw-text-stone-500">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Range Slider custom representation -->
+                    <div>
+                        <label class="tw-block tw-text-xs tw-font-bold tw-text-night-600 tw-mb-1">CURSEUR DOUBLE (SIMULATEURS)</label>
+                        <div class="tw-relative tw-w-full tw-h-2 tw-bg-stone-300 tw-rounded-full tw-mt-4">
+                            <div class="tw-absolute tw-h-full tw-bg-pool tw-rounded-full" style="left: 20%; right: 30%;"></div>
+                            <div class="tw-absolute tw-size-6 tw-bg-white tw-border-2 tw-border-night-400 tw-rounded-full tw-cursor-pointer tw--top-2" style="left: 20%; transform: translateX(-50%);"></div>
+                            <div class="tw-absolute tw-size-6 tw-bg-white tw-border-2 tw-border-night-400 tw-rounded-full tw-cursor-pointer tw--top-2" style="right: 30%; transform: translateX(50%);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="code-inputs" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;!-- Barre de Recherche L'Etudiant --&gt;
+&lt;div class="tw-relative tw-flex tw-items-center"&gt;
+    &lt;input type="search" placeholder="Rechercher une école..." class="tw-w-full tw-h-10 tw-pl-4 tw-pr-10 tw-border tw-border-stone-300 tw-rounded-sm tw-text-sm focus:tw-outline-none focus:tw-border-night-600"&gt;
+    &lt;span class="tw-absolute tw-right-3 tw-text-stone-500"&gt;
+        &lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Badges -->
+        <section id="badges" class="ds-section">
+            <h2 class="ds-section-title">Badges & Tags</h2>
+            <p class="ds-section-desc">
+                Les badges de rubriques marquent l'appartenance thématique d'un contenu. Ils sont caractérisés par un texte gras en capitales et des coins droits.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-badges')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">Badges de Rubriques</div>
+                
+                <div class="ds-preview-flex">
+                    <span class="tw-inline-block tw-bg-ori tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">ORIENTATION</span>
+                    <span class="tw-inline-block tw-bg-tomato tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">PARCOURSUP</span>
+                    <span class="tw-inline-block tw-bg-citrus tw-text-black tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">BAC 2026</span>
+                    <span class="tw-inline-block tw-bg-apple tw-text-black tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">COLLÈGE</span>
+                    <span class="tw-inline-block tw-bg-raspberry tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">ALTERNANCE</span>
+                    <span class="tw-inline-block tw-bg-spritz tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none">VIE ÉTUDIANTE</span>
+                </div>
+
+                <div id="code-badges" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;!-- Badge Orientation --&gt;
+&lt;span class="tw-inline-block tw-bg-ori tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none"&gt;ORIENTATION&lt;/span&gt;
+
+&lt;!-- Badge Parcoursup --&gt;
+&lt;span class="tw-inline-block tw-bg-tomato tw-text-white tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none"&gt;PARCOURSUP&lt;/span&gt;
+
+&lt;!-- Badge Bac --&gt;
+&lt;span class="tw-inline-block tw-bg-citrus tw-text-black tw-font-bold tw-text-[11px] tw-px-2 tw-py-1 tw-rounded-none"&gt;BAC 2026&lt;/span&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Cards -->
+        <section id="cards" class="ds-section">
+            <h2 class="ds-section-title">Cartes d'Articles (Cards)</h2>
+            <p class="ds-section-desc">
+                Les cartes structurent l'affichage des actualités. Elles ont des coins légèrement arrondis, une ombre discrète au survol,
+                et intègrent systématiquement un badge de rubrique et une image d'illustration.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-cards')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">Article Card Showcase</div>
+                
+                <div class="ds-preview-grid">
+                    <!-- Single Card Component -->
+                    <article class="tw-bg-white tw-border tw-border-stone-100 tw-rounded-lg tw-overflow-hidden hover:tw-shadow-md tw-transition tw-duration-200" style="max-width: 360px;">
+                        <div class="tw-relative tw-aspect-video tw-w-full">
+                            <!-- Real WebP asset extracted from letudiant.fr -->
+                            <img src="https://storage.letudiant.fr/mediatheque/letudiant/4/5/3009645-les-passerelles-permettent-aux-titulaires-d-un-bac-5-et-professionnels-du-secteur-paramedical-de-rejoindre-les-etudes-de-mmopk-448x252.webp" class="tw-size-full tw-object-cover" alt="Passerelles MMOPK">
+                            <div class="tw-absolute tw-bottom-3 tw-left-3">
+                                <span class="tw-inline-block tw-bg-tomato tw-text-white tw-font-bold tw-text-[10px] tw-px-2 tw-py-0.5">PARCOURSUP</span>
+                            </div>
+                        </div>
+                        <div class="tw-p-4">
+                            <h3 class="tw-font-bold tw-text-base tw-text-night-600 tw-mb-2 hover:tw-text-tomato tw-transition">
+                                Études de santé : comment fonctionnent les passerelles vers les filières MMOPK ?
+                            </h3>
+                            <p class="tw-text-xs tw-text-night-50 tw-mb-4">
+                                Pour les titulaires d’un bac+5 ou les professionnels du secteur paramédical, des voies alternatives existent...
+                            </p>
+                            <div class="tw-flex tw-justify-between tw-items-center tw-text-[11px] tw-text-stone-500 tw-font-medium">
+                                <span>Par Julien L.</span>
+                                <span>Il y a 2 heures</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div id="code-cards" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;article class="tw-bg-white tw-border tw-border-stone-100 tw-rounded-lg tw-overflow-hidden hover:tw-shadow-md tw-transition tw-duration-200" style="max-width: 360px;"&gt;
+    &lt;div class="tw-relative tw-aspect-video tw-w-full"&gt;
+        &lt;img src="[IMAGE_URL]" class="tw-size-full tw-object-cover" alt="Titre Image"&gt;
+        &lt;div class="tw-absolute tw-bottom-3 tw-left-3"&gt;
+            &lt;span class="tw-inline-block tw-bg-tomato tw-text-white tw-font-bold tw-text-[10px] tw-px-2 tw-py-0.5"&gt;PARCOURSUP&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="tw-p-4"&gt;
+        &lt;h3 class="tw-font-bold tw-text-base tw-text-night-600 tw-mb-2 hover:tw-text-tomato"&gt;
+            Titre de la carte d'actualité...
+        &lt;/h3&gt;
+        &lt;p class="tw-text-xs tw-text-night-50 tw-mb-4"&gt;
+            Description ou extrait court de l'article...
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Layout Shells (Header/Footer) -->
+        <section id="layouts" class="ds-section">
+            <h2 class="ds-section-title">En-tête & Pied de page</h2>
+            <p class="ds-section-desc">
+                Composants d'interface structurels du site : l'en-tête (Header) collant utilisant la couleur <code>tomato</code>, 
+                et le pied de page (Footer) structuré et repliable sur mobile.
+            </p>
+
+            <div class="ds-showcase-box">
+                <button class="ds-code-toggle" onclick="toggleCode('code-layouts')"><i class="fa-solid fa-code"></i> Code</button>
+                <div class="ds-showcase-title">En-tête Miniature (Header Preview)</div>
+                
+                <div style="background-color: #f3f2ee; padding: 20px; border-radius: 8px;">
+                    <!-- Miniature Header -->
+                    <header class="tw-bg-tomato tw-py-3 tw-px-4 tw-flex tw-justify-between tw-items-center tw-rounded-sm">
+                        <a href="#">
+                            <img src="https://storage.letudiant.fr/build/etu/dist/assets/images/svg/logo/letudiant-white.svg" width="120" height="23" alt="Logo White">
+                        </a>
+                        <div class="tw-flex tw-items-center tw-gap-x-4">
+                            <span class="tw-text-white tw-cursor-pointer"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="tw-text-white tw-cursor-pointer"><i class="fa-solid fa-bell"></i></span>
+                            <a href="#" class="tw-justify-center tw-items-center tw-font-bold tw-text-xs tw-rounded-sm tw-px-3 tw-py-1.5 tw-bg-white tw-text-night-600 hover:tw-bg-stone-50">
+                                Se connecter
+                            </a>
+                        </div>
+                    </header>
+                </div>
+
+                <div id="code-layouts" class="ds-code-block">
+                    <button class="ds-code-block-copy" onclick="copyCode(this)">Copier</button>
+                    <pre><code>&lt;header id="header" class="tw-bg-tomato tw-top-0 tw-z-[100] tw-sticky tw-py-3 tw-px-4 tw-flex tw-justify-between tw-items-center"&gt;
+    &lt;a href="/"&gt;
+        &lt;img src="https://storage.letudiant.fr/build/etu/dist/assets/images/svg/logo/letudiant-white.svg" width="167" height="32" alt="Logo L'Etudiant"&gt;
+    &lt;/a&gt;
+    &lt;div class="tw-flex tw-items-center tw-gap-x-4"&gt;
+        &lt;a href="/compte/sso/authentification.html" class="tw-justify-center tw-items-center tw-font-bold tw-text-sm tw-rounded-sm tw-px-3 tw-h-9 tw-bg-white tw-text-night-600 hover:tw-bg-stone-25"&gt;
+            Se connecter
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+            </div>
+        </main>
+    </main>
+
+    <script>
+        // Set active item in sidebar nav
+        function setActiveNav(element) {
+            const items = document.querySelectorAll('.ds-nav-item');
+            items.forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Toggle clar/sombre theme
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            body.classList.toggle('ds-light-mode');
+            
+            if (body.classList.contains('ds-light-mode')) {
+                themeIcon.className = 'fa-solid fa-moon';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun';
+            }
+        }
+
+        // Copy Hex colors to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            });
+        }
+
+        // Show code blocks
+        function toggleCode(id) {
+            const codeBlock = document.getElementById(id);
+            if (codeBlock.style.display === 'block') {
+                codeBlock.style.display = 'none';
+            } else {
+                codeBlock.style.display = 'block';
+            }
+        }
+
+        // Copy Code from blocks
+        function copyCode(btn) {
+            const codeText = btn.nextElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                showToast();
+            });
+        }
+
+        // Show Toast Feedback
+        function showToast() {
+            const toast = document.getElementById('ds-toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

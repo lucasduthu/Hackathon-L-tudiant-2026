@@ -1,0 +1,1074 @@
+{
+  "users": {
+    "lucasduthu": {
+      "password": "146294c310088533521eb72e9c91bf707c9b375cd7376f9acd12de1d88536c7c",
+      "email": "lduthu@albertschool.com",
+      "created": "2026-04-27T19:40:58.410471",
+      "profile": {
+        "persona": "etudiant",
+        "urgency": "medium",
+        "timeline": "next_year",
+        "emotional_state": "anxious",
+        "intent": "Je suis un peu perdu et j'ai peur de tout reprendre à 0.",
+        "stage": "vague_idea",
+        "interests": [
+          "Technique",
+          "Innovation",
+          "Technologie"
+        ],
+        "persona_label": "Étudiant·e"
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "Salut 👋 Je suis **ORI**, ton conseiller d'orientation L'Étudiant. Pour bien t'aider, dis-moi d'abord où tu en es :",
+          "block": null,
+          "suggestions": [
+            {
+              "label": "🎒 Au collège",
+              "action": {
+                "intent": "persona",
+                "value": "collegien"
+              }
+            },
+            {
+              "label": "📘 Au lycée",
+              "action": {
+                "intent": "persona",
+                "value": "lyceen"
+              }
+            },
+            {
+              "label": "🎓 Étudiant·e",
+              "action": {
+                "intent": "persona",
+                "value": "etudiant"
+              }
+            },
+            {
+              "label": "👨‍👩‍👧 Parent",
+              "action": {
+                "intent": "persona",
+                "value": "parent"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Étudiant·e"
+        },
+        {
+          "role": "assistant",
+          "content": "Parfait 👍 Qu'est-ce qui t'amène aujourd'hui ?",
+          "block": null,
+          "suggestions": [
+            {
+              "label": "🤔 Je sais pas quoi faire",
+              "action": {
+                "intent": "swipe"
+              },
+              "echo": "Je sais pas quoi faire"
+            },
+            {
+              "label": "🎯 J'ai une idée de métier",
+              "action": {
+                "intent": "ask_metier"
+              },
+              "echo": "J'ai une idée de métier"
+            },
+            {
+              "label": "🧭 Des pistes pour mon profil",
+              "action": {
+                "intent": "suggest"
+              },
+              "echo": "Propose-moi des pistes"
+            },
+            {
+              "label": "📅 Questions Parcoursup",
+              "action": {
+                "intent": "free",
+                "text": "C'est quoi Parcoursup et quelles sont les dates clés à retenir ?"
+              },
+              "echo": "Questions Parcoursup"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "J'ai une idée de métier"
+        },
+        {
+          "role": "assistant",
+          "content": "Dis-moi quel métier ou domaine t'intéresse — par exemple *développeur*, *infirmier*, *marketing*, *droit*… et je te sors les fiches L'Étudiant. 🔎",
+          "block": null,
+          "suggestions": []
+        },
+        {
+          "role": "user",
+          "content": "Data Scientist"
+        },
+        {
+          "role": "assistant",
+          "content": "Salut ! Bien sûr, je suis là pour t'aider à trouver le bon chemin. Un Data Scientist, c'est une super idée ! On va faire un petit tour sur L'Étudiant.fr pour te donner un aperçu des métiers et des formations. Dis-moi, quel type de Data Scientist t'intéresse le plus ? As-tu déjà une idée du type de projets que tu aimerais réaliser ?",
+          "block": {
+            "type": "metiers",
+            "cards": [
+              {
+                "title": "Responsable en IA éthique",
+                "sector": "Intelligence artificielle",
+                "emoji": "🤖",
+                "extract": "licité",
+                "url": "https://www.letudiant.fr/metiers/secteur/intelligence-artificielle/responsable-en-ia-ethique.html"
+              },
+              {
+                "title": "Webmarketeur",
+                "sector": "Informatique telecom web",
+                "emoji": "💻",
+                "extract": "in Publicité",
+                "url": "https://www.letudiant.fr/metiers/secteur/informatique-telecom-web/webmarketeur.html"
+              },
+              {
+                "title": "Chef de projet IA",
+                "sector": "Intelligence artificielle",
+                "emoji": "🤖",
+                "extract": "métiers : Informatique - Web 1 min Publicité",
+                "url": "https://www.letudiant.fr/metiers/secteur/intelligence-artificielle/chef-de-projet-ia.html"
+              }
+            ]
+          },
+          "suggestions": [
+            {
+              "label": "🔥 Découvrir en swipant",
+              "action": {
+                "intent": "swipe"
+              },
+              "echo": "Je veux swiper des métiers"
+            },
+            {
+              "label": "🧭 Des pistes pour moi",
+              "action": {
+                "intent": "suggest"
+              },
+              "echo": "Propose-moi des pistes"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Propose-moi des pistes"
+        },
+        {
+          "role": "assistant",
+          "content": "D'après ce que je sais de toi, voici 3 pistes à explorer 👇",
+          "block": {
+            "type": "metiers",
+            "cards": [
+              {
+                "title": "Développeur Web/Mobile",
+                "sector": "Suggéré pour toi",
+                "emoji": "💻",
+                "extract": "Le secteur du cinéma et de l’audiovisuel est en pleine transformation digitale. La création de contenus en ligne, la production de vidéos, et la distribution numérique nécessitent des compétences techniques pointues. Un diplôme en informatique ou en arts du spectacle peut être un atout majeur.",
+                "url": "https://www.letudiant.fr/recherche.html?query=D%C3%A9veloppeur+Web%2FMobile"
+              },
+              {
+                "title": "Producteur de Films/Séries",
+                "sector": "Suggéré pour toi",
+                "emoji": "🧭",
+                "extract": "La production cinématographique est un métier passionnant et exigeant. Une formation en cinéma, en réalisation ou en post-production permet d'acquérir les compétences techniques et créatives nécessaires à la création d'une œuvre cinématographique.",
+                "url": "https://www.letudiant.fr/recherche.html?query=Producteur+de+Films%2FS%C3%A9ries"
+              },
+              {
+                "title": "Chef de Production",
+                "sector": "Suggéré pour toi",
+                "emoji": "⚙️",
+                "extract": "Le rôle de chef de production est essentiel dans toute production audiovisuelle. Il s'agit de gérer l'ensemble du projet, de coordonner les équipes, de respecter le budget et le planning, et de garantir la qualité de la production.",
+                "url": "https://www.letudiant.fr/recherche.html?query=Chef+de+Production"
+              }
+            ]
+          },
+          "suggestions": [
+            {
+              "label": "💬 En savoir plus sur l'une",
+              "action": {
+                "intent": "ask_metier"
+              },
+              "echo": "Parle-moi d'un de ces métiers"
+            },
+            {
+              "label": "🔥 Plutôt swiper",
+              "action": {
+                "intent": "swipe"
+              },
+              "echo": "Je préfère swiper"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Je préfère swiper"
+        },
+        {
+          "role": "assistant",
+          "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+          "block": null,
+          "suggestions": []
+        },
+        {
+          "role": "assistant",
+          "content": "Tu n'as gardé aucun métier — pas grave, ça aussi c'est une info ! On réessaie avec d'autres, ou je te propose des pistes ?",
+          "block": null,
+          "suggestions": [
+            {
+              "label": "🔁 Re-swiper",
+              "action": {
+                "intent": "swipe"
+              },
+              "echo": "On re-swipe"
+            },
+            {
+              "label": "🧭 Des pistes pour moi",
+              "action": {
+                "intent": "suggest"
+              },
+              "echo": "Propose-moi des pistes"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "On re-swipe"
+        },
+        {
+          "role": "assistant",
+          "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+          "block": null,
+          "suggestions": []
+        },
+        {
+          "role": "assistant",
+          "content": "Tu n'as gardé aucun métier — pas grave, ça aussi c'est une info ! On réessaie avec d'autres, ou je te propose des pistes ?",
+          "block": null,
+          "suggestions": [
+            {
+              "label": "🔁 Re-swiper",
+              "action": {
+                "intent": "swipe"
+              },
+              "echo": "On re-swipe"
+            },
+            {
+              "label": "🧭 Des pistes pour moi",
+              "action": {
+                "intent": "suggest"
+              },
+              "echo": "Propose-moi des pistes"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "On re-swipe"
+        },
+        {
+          "role": "assistant",
+          "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+          "block": null,
+          "suggestions": []
+        }
+      ],
+      "tinder_profile": {
+        "clusters": [
+          "Technique",
+          "Innovation",
+          "Technologie"
+        ],
+        "liked_careers": [
+          "Ingénieur en intelligence artificielle",
+          "Technicien en impression 3D",
+          "Responsable de laboratoire de contrôle",
+          "Ingénieur en cybersécurité",
+          "Technicien en énergie solaire",
+          "Chef de projet en innovation",
+          "Technicien en maintenance industrielle",
+          "Ingénieur en data science"
+        ],
+        "work_environment": [
+          "Open space dynamique",
+          "Siège, télétravail possible",
+          "Startup agile",
+          "Profil international",
+          "Vision long terme"
+        ]
+      },
+      "all_conversations": [
+        {
+          "id": "1777824532.0119731",
+          "title": "coucou...",
+          "messages": [
+            {
+              "role": "user",
+              "content": "coucou"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?\n\nFaire le bon choix, ça commence par mieux se comprendre. Nos tests vous donnent un vrai coup de pouce : en quelques minutes, ils révèlent vos atouts et vos envies. Et ça marche : plein d’élèves y ont trouvé leur voie !\n- [Test : quelles études supérieures sont faites pour vous ?](https://www.letudiant.fr/test/etudes/quel-type-d-etudes-faire/quelles-etudes-superieures-sont-faites-pour-vous.html)"
+            },
+            {
+              "role": "user",
+              "content": "ok, quelques suggestion à partir de mon profil ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "ok"
+            },
+            {
+              "role": "assistant",
+              "content": "Souhaitez-vous que nous parlions des tests d'orientation qui pourraient vous aider à y voir plus clair ?"
+            },
+            {
+              "role": "user",
+              "content": "oui"
+            },
+            {
+              "role": "assistant",
+              "content": "Bonne idée, voyons ensemble quel test pourrait vous aider."
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute ? "
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?"
+            },
+            {
+              "role": "user",
+              "content": "je voudrais des conseils que tu peux me donner par rapport à ce que tu sais de moi"
+            },
+            {
+              "role": "assistant",
+              "content": "D'après vos centres d'intérêt pour la créativité, le leadership et la négociation, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Marketing et Communication** : Ce domaine est idéal pour ceux qui aiment travailler sur des projets créatifs, gérer des équipes et négocier. Il offre de nombreuses spécialisations, comme le marketing digital, la publicité, ou encore la communication d'entreprise.\n\n2. **Management et Gestion de Projet** : Si vous êtes attiré par le leadership et la gestion d'équipe, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités dans des secteurs variés.\n\n3. **Arts et Design** : Travailler sur des projets créatifs et artistiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment l'art, le design, et l'innovation visuelle.\n\nSouhaitez-vous creuser un de ces domaines ?\n\nVous poser les bonnes questions, c’est déjà avancer. Grâce à nos tests rapides et efficaces, vous allez découvrir ce qui vous motive vraiment. Des milliers de jeunes l’ont fait avant vous, pourquoi pas vous ?\n- [Trouvez votre voie professionnelle !](https://www.letudiant.fr/test/metiers/orientation/trouvez-votre-voie-professionnelle.html)"
+            }
+          ]
+        },
+        {
+          "id": "1777825062.674601",
+          "title": "coucou...",
+          "messages": [
+            {
+              "role": "user",
+              "content": "coucou"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?\n\nFaire le bon choix, ça commence par mieux se comprendre. Nos tests vous donnent un vrai coup de pouce : en quelques minutes, ils révèlent vos atouts et vos envies. Et ça marche : plein d’élèves y ont trouvé leur voie !\n- [Test : quelles études supérieures sont faites pour vous ?](https://www.letudiant.fr/test/etudes/quel-type-d-etudes-faire/quelles-etudes-superieures-sont-faites-pour-vous.html)"
+            },
+            {
+              "role": "user",
+              "content": "ok, quelques suggestion à partir de mon profil ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "ok"
+            },
+            {
+              "role": "assistant",
+              "content": "Souhaitez-vous que nous parlions des tests d'orientation qui pourraient vous aider à y voir plus clair ?"
+            },
+            {
+              "role": "user",
+              "content": "oui"
+            },
+            {
+              "role": "assistant",
+              "content": "Bonne idée, voyons ensemble quel test pourrait vous aider."
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute ? "
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?"
+            },
+            {
+              "role": "user",
+              "content": "je voudrais des conseils que tu peux me donner par rapport à ce que tu sais de moi"
+            },
+            {
+              "role": "assistant",
+              "content": "D'après vos centres d'intérêt pour la créativité, le leadership et la négociation, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Marketing et Communication** : Ce domaine est idéal pour ceux qui aiment travailler sur des projets créatifs, gérer des équipes et négocier. Il offre de nombreuses spécialisations, comme le marketing digital, la publicité, ou encore la communication d'entreprise.\n\n2. **Management et Gestion de Projet** : Si vous êtes attiré par le leadership et la gestion d'équipe, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités dans des secteurs variés.\n\n3. **Arts et Design** : Travailler sur des projets créatifs et artistiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment l'art, le design, et l'innovation visuelle.\n\nSouhaitez-vous creuser un de ces domaines ?\n\nVous poser les bonnes questions, c’est déjà avancer. Grâce à nos tests rapides et efficaces, vous allez découvrir ce qui vous motive vraiment. Des milliers de jeunes l’ont fait avant vous, pourquoi pas vous ?\n- [Trouvez votre voie professionnelle !](https://www.letudiant.fr/test/metiers/orientation/trouvez-votre-voie-professionnelle.html)"
+            }
+          ]
+        },
+        {
+          "id": "1777825243.320042",
+          "title": "coucou...",
+          "messages": [
+            {
+              "role": "user",
+              "content": "coucou"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?\n\nFaire le bon choix, ça commence par mieux se comprendre. Nos tests vous donnent un vrai coup de pouce : en quelques minutes, ils révèlent vos atouts et vos envies. Et ça marche : plein d’élèves y ont trouvé leur voie !\n- [Test : quelles études supérieures sont faites pour vous ?](https://www.letudiant.fr/test/etudes/quel-type-d-etudes-faire/quelles-etudes-superieures-sont-faites-pour-vous.html)"
+            },
+            {
+              "role": "user",
+              "content": "ok, quelques suggestion à partir de mon profil ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "ok"
+            },
+            {
+              "role": "assistant",
+              "content": "Souhaitez-vous que nous parlions des tests d'orientation qui pourraient vous aider à y voir plus clair ?"
+            },
+            {
+              "role": "user",
+              "content": "oui"
+            },
+            {
+              "role": "assistant",
+              "content": "Bonne idée, voyons ensemble quel test pourrait vous aider."
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute ? "
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?"
+            },
+            {
+              "role": "user",
+              "content": "je voudrais des conseils que tu peux me donner par rapport à ce que tu sais de moi"
+            },
+            {
+              "role": "assistant",
+              "content": "D'après vos centres d'intérêt pour la créativité, le leadership et la négociation, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Marketing et Communication** : Ce domaine est idéal pour ceux qui aiment travailler sur des projets créatifs, gérer des équipes et négocier. Il offre de nombreuses spécialisations, comme le marketing digital, la publicité, ou encore la communication d'entreprise.\n\n2. **Management et Gestion de Projet** : Si vous êtes attiré par le leadership et la gestion d'équipe, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités dans des secteurs variés.\n\n3. **Arts et Design** : Travailler sur des projets créatifs et artistiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment l'art, le design, et l'innovation visuelle.\n\nSouhaitez-vous creuser un de ces domaines ?\n\nVous poser les bonnes questions, c’est déjà avancer. Grâce à nos tests rapides et efficaces, vous allez découvrir ce qui vous motive vraiment. Des milliers de jeunes l’ont fait avant vous, pourquoi pas vous ?\n- [Trouvez votre voie professionnelle !](https://www.letudiant.fr/test/metiers/orientation/trouvez-votre-voie-professionnelle.html)"
+            }
+          ]
+        },
+        {
+          "id": "1777825304.580759",
+          "title": "coucou...",
+          "messages": [
+            {
+              "role": "user",
+              "content": "coucou"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?\n\nFaire le bon choix, ça commence par mieux se comprendre. Nos tests vous donnent un vrai coup de pouce : en quelques minutes, ils révèlent vos atouts et vos envies. Et ça marche : plein d’élèves y ont trouvé leur voie !\n- [Test : quelles études supérieures sont faites pour vous ?](https://www.letudiant.fr/test/etudes/quel-type-d-etudes-faire/quelles-etudes-superieures-sont-faites-pour-vous.html)"
+            },
+            {
+              "role": "user",
+              "content": "ok, quelques suggestion à partir de mon profil ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "ok"
+            },
+            {
+              "role": "assistant",
+              "content": "Souhaitez-vous que nous parlions des tests d'orientation qui pourraient vous aider à y voir plus clair ?"
+            },
+            {
+              "role": "user",
+              "content": "oui"
+            },
+            {
+              "role": "assistant",
+              "content": "Bonne idée, voyons ensemble quel test pourrait vous aider."
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Je rencontre une difficulté technique. Réessaie dans quelques instants ! 🙏"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute"
+            },
+            {
+              "role": "assistant",
+              "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+            },
+            {
+              "role": "user",
+              "content": "je t'écoute ? "
+            },
+            {
+              "role": "assistant",
+              "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?"
+            },
+            {
+              "role": "user",
+              "content": "je voudrais des conseils que tu peux me donner par rapport à ce que tu sais de moi"
+            },
+            {
+              "role": "assistant",
+              "content": "D'après vos centres d'intérêt pour la créativité, le leadership et la négociation, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Marketing et Communication** : Ce domaine est idéal pour ceux qui aiment travailler sur des projets créatifs, gérer des équipes et négocier. Il offre de nombreuses spécialisations, comme le marketing digital, la publicité, ou encore la communication d'entreprise.\n\n2. **Management et Gestion de Projet** : Si vous êtes attiré par le leadership et la gestion d'équipe, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités dans des secteurs variés.\n\n3. **Arts et Design** : Travailler sur des projets créatifs et artistiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment l'art, le design, et l'innovation visuelle.\n\nSouhaitez-vous creuser un de ces domaines ?\n\nVous poser les bonnes questions, c’est déjà avancer. Grâce à nos tests rapides et efficaces, vous allez découvrir ce qui vous motive vraiment. Des milliers de jeunes l’ont fait avant vous, pourquoi pas vous ?\n- [Trouvez votre voie professionnelle !](https://www.letudiant.fr/test/metiers/orientation/trouvez-votre-voie-professionnelle.html)"
+            }
+          ]
+        },
+        {
+          "id": "1782302307.3068202",
+          "title": "Étudiant·e",
+          "messages": [
+            {
+              "role": "assistant",
+              "content": "Salut 👋 Je suis **ORI**, ton conseiller d'orientation L'Étudiant. Pour bien t'aider, dis-moi d'abord où tu en es :",
+              "block": null,
+              "suggestions": [
+                {
+                  "label": "🎒 Au collège",
+                  "action": {
+                    "intent": "persona",
+                    "value": "collegien"
+                  }
+                },
+                {
+                  "label": "📘 Au lycée",
+                  "action": {
+                    "intent": "persona",
+                    "value": "lyceen"
+                  }
+                },
+                {
+                  "label": "🎓 Étudiant·e",
+                  "action": {
+                    "intent": "persona",
+                    "value": "etudiant"
+                  }
+                },
+                {
+                  "label": "👨‍👩‍👧 Parent",
+                  "action": {
+                    "intent": "persona",
+                    "value": "parent"
+                  }
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "Étudiant·e"
+            },
+            {
+              "role": "assistant",
+              "content": "Parfait 👍 Qu'est-ce qui t'amène aujourd'hui ?",
+              "block": null,
+              "suggestions": [
+                {
+                  "label": "🤔 Je sais pas quoi faire",
+                  "action": {
+                    "intent": "swipe"
+                  },
+                  "echo": "Je sais pas quoi faire"
+                },
+                {
+                  "label": "🎯 J'ai une idée de métier",
+                  "action": {
+                    "intent": "ask_metier"
+                  },
+                  "echo": "J'ai une idée de métier"
+                },
+                {
+                  "label": "🧭 Des pistes pour mon profil",
+                  "action": {
+                    "intent": "suggest"
+                  },
+                  "echo": "Propose-moi des pistes"
+                },
+                {
+                  "label": "📅 Questions Parcoursup",
+                  "action": {
+                    "intent": "free",
+                    "text": "C'est quoi Parcoursup et quelles sont les dates clés à retenir ?"
+                  },
+                  "echo": "Questions Parcoursup"
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "J'ai une idée de métier"
+            },
+            {
+              "role": "assistant",
+              "content": "Dis-moi quel métier ou domaine t'intéresse — par exemple *développeur*, *infirmier*, *marketing*, *droit*… et je te sors les fiches L'Étudiant. 🔎",
+              "block": null,
+              "suggestions": []
+            },
+            {
+              "role": "user",
+              "content": "Data Scientist"
+            },
+            {
+              "role": "assistant",
+              "content": "Salut ! Bien sûr, je suis là pour t'aider à trouver le bon chemin. Un Data Scientist, c'est une super idée ! On va faire un petit tour sur L'Étudiant.fr pour te donner un aperçu des métiers et des formations. Dis-moi, quel type de Data Scientist t'intéresse le plus ? As-tu déjà une idée du type de projets que tu aimerais réaliser ?",
+              "block": {
+                "type": "metiers",
+                "cards": [
+                  {
+                    "title": "Responsable en IA éthique",
+                    "sector": "Intelligence artificielle",
+                    "emoji": "🤖",
+                    "extract": "licité",
+                    "url": "https://www.letudiant.fr/metiers/secteur/intelligence-artificielle/responsable-en-ia-ethique.html"
+                  },
+                  {
+                    "title": "Webmarketeur",
+                    "sector": "Informatique telecom web",
+                    "emoji": "💻",
+                    "extract": "in Publicité",
+                    "url": "https://www.letudiant.fr/metiers/secteur/informatique-telecom-web/webmarketeur.html"
+                  },
+                  {
+                    "title": "Chef de projet IA",
+                    "sector": "Intelligence artificielle",
+                    "emoji": "🤖",
+                    "extract": "métiers : Informatique - Web 1 min Publicité",
+                    "url": "https://www.letudiant.fr/metiers/secteur/intelligence-artificielle/chef-de-projet-ia.html"
+                  }
+                ]
+              },
+              "suggestions": [
+                {
+                  "label": "🔥 Découvrir en swipant",
+                  "action": {
+                    "intent": "swipe"
+                  },
+                  "echo": "Je veux swiper des métiers"
+                },
+                {
+                  "label": "🧭 Des pistes pour moi",
+                  "action": {
+                    "intent": "suggest"
+                  },
+                  "echo": "Propose-moi des pistes"
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "Propose-moi des pistes"
+            },
+            {
+              "role": "assistant",
+              "content": "D'après ce que je sais de toi, voici 3 pistes à explorer 👇",
+              "block": {
+                "type": "metiers",
+                "cards": [
+                  {
+                    "title": "Développeur Web/Mobile",
+                    "sector": "Suggéré pour toi",
+                    "emoji": "💻",
+                    "extract": "Le secteur du cinéma et de l’audiovisuel est en pleine transformation digitale. La création de contenus en ligne, la production de vidéos, et la distribution numérique nécessitent des compétences techniques pointues. Un diplôme en informatique ou en arts du spectacle peut être un atout majeur.",
+                    "url": "https://www.letudiant.fr/recherche.html?query=D%C3%A9veloppeur+Web%2FMobile"
+                  },
+                  {
+                    "title": "Producteur de Films/Séries",
+                    "sector": "Suggéré pour toi",
+                    "emoji": "🧭",
+                    "extract": "La production cinématographique est un métier passionnant et exigeant. Une formation en cinéma, en réalisation ou en post-production permet d'acquérir les compétences techniques et créatives nécessaires à la création d'une œuvre cinématographique.",
+                    "url": "https://www.letudiant.fr/recherche.html?query=Producteur+de+Films%2FS%C3%A9ries"
+                  },
+                  {
+                    "title": "Chef de Production",
+                    "sector": "Suggéré pour toi",
+                    "emoji": "⚙️",
+                    "extract": "Le rôle de chef de production est essentiel dans toute production audiovisuelle. Il s'agit de gérer l'ensemble du projet, de coordonner les équipes, de respecter le budget et le planning, et de garantir la qualité de la production.",
+                    "url": "https://www.letudiant.fr/recherche.html?query=Chef+de+Production"
+                  }
+                ]
+              },
+              "suggestions": [
+                {
+                  "label": "💬 En savoir plus sur l'une",
+                  "action": {
+                    "intent": "ask_metier"
+                  },
+                  "echo": "Parle-moi d'un de ces métiers"
+                },
+                {
+                  "label": "🔥 Plutôt swiper",
+                  "action": {
+                    "intent": "swipe"
+                  },
+                  "echo": "Je préfère swiper"
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "Je préfère swiper"
+            },
+            {
+              "role": "assistant",
+              "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+              "block": null,
+              "suggestions": []
+            },
+            {
+              "role": "assistant",
+              "content": "Tu n'as gardé aucun métier — pas grave, ça aussi c'est une info ! On réessaie avec d'autres, ou je te propose des pistes ?",
+              "block": null,
+              "suggestions": [
+                {
+                  "label": "🔁 Re-swiper",
+                  "action": {
+                    "intent": "swipe"
+                  },
+                  "echo": "On re-swipe"
+                },
+                {
+                  "label": "🧭 Des pistes pour moi",
+                  "action": {
+                    "intent": "suggest"
+                  },
+                  "echo": "Propose-moi des pistes"
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "On re-swipe"
+            },
+            {
+              "role": "assistant",
+              "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+              "block": null,
+              "suggestions": []
+            },
+            {
+              "role": "assistant",
+              "content": "Tu n'as gardé aucun métier — pas grave, ça aussi c'est une info ! On réessaie avec d'autres, ou je te propose des pistes ?",
+              "block": null,
+              "suggestions": [
+                {
+                  "label": "🔁 Re-swiper",
+                  "action": {
+                    "intent": "swipe"
+                  },
+                  "echo": "On re-swipe"
+                },
+                {
+                  "label": "🧭 Des pistes pour moi",
+                  "action": {
+                    "intent": "suggest"
+                  },
+                  "echo": "Propose-moi des pistes"
+                }
+              ]
+            },
+            {
+              "role": "user",
+              "content": "On re-swipe"
+            },
+            {
+              "role": "assistant",
+              "content": "Top ! Garde les métiers qui t'attirent, écarte les autres. C'est parti 👇",
+              "block": null,
+              "suggestions": []
+            }
+          ]
+        }
+      ]
+    },
+    "test1": {
+      "password": "050a59d316287c91cc3d9fda76c9931513096912e9c1268214262c8ed9cc2cc6",
+      "email": "",
+      "created": "2026-04-28T00:30:40.899216",
+      "profile": {
+        "persona": "lyceen",
+        "urgency": "low",
+        "timeline": "exploring",
+        "emotional_state": "curious",
+        "intent": "Pas de précision.",
+        "stage": "exploring"
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "Ce n’est pas tout à fait dans mes cordes… moi, je suis surtout là pour vous accompagner dans votre orientation ! Pour obtenir la réponse qu’il vous faut, je vous recommande d’explorer notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer, et vous guidera en quelques clics vers la bonne page, le bon article, et donc, la bonne information !"
+        },
+        {
+          "role": "user",
+          "content": "explique moi"
+        },
+        {
+          "role": "assistant",
+          "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+        }
+      ],
+      "tinder_profile": {}
+    },
+    "mathildedm": {
+      "password": "f2d60ede6e983e89a35a9c3167e09f0800c3a01a21f579a3275131a9f4dcce67",
+      "email": "mmaudet@albertschool.com",
+      "created": "2026-04-28T19:09:44.605144",
+      "profile": {
+        "persona": "etudiant",
+        "urgency": "high",
+        "timeline": "this_year",
+        "emotional_state": "curious",
+        "intent": "Pas de précision.",
+        "stage": "urgent",
+        "interests": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ]
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "Ce n’est pas vraiment dans mon domaine… moi, je suis là pour vous aider dans votre orientation ! Pour trouver la bonne réponse, je vous invite à consulter notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation. Il regorge de contenus utiles pour avancer. Il vous aidera à trouver, en quelques clics, la bonne page, le bon article et donc la bonne info !"
+        },
+        {
+          "role": "user",
+          "content": "Est ce que tu peux me proposer des plans ? "
+        },
+        {
+          "role": "assistant",
+          "content": "Ce sujet sort un peu de mon champ d’action… mais je suis là pour vous orienter efficacement ! Je vous recommande d’utiliser notre moteur de recherche accessible en cliquant sur la loupe dans la barre de navigation : il vous dirigera facilement vers les contenus les plus adaptés à votre besoin."
+        },
+        {
+          "role": "user",
+          "content": "Mode Tinder terminé. Métiers aimés : ['Ingénieur R&D', 'Data Analyst', 'Développeur IA', 'Architecte']. Clusters détectés : ['Innovation', 'Technique', 'Laboratoire']. Que recommanderais-tu comme formations ?"
+        },
+        {
+          "role": "assistant",
+          "content": "D'après vos centres d'intérêt pour l'innovation, la technique et le travail en laboratoire, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Ingénierie** : Ce domaine est idéal pour ceux qui aiment innover et travailler sur des projets techniques. Il offre de nombreuses spécialisations, notamment en recherche et développement.\n\n2. **Informatique et Data Science** : Si vous êtes attiré par l'analyse de données et le développement de solutions technologiques, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités.\n\n3. **Sciences et Recherche** : Travailler en laboratoire et contribuer à des avancées scientifiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment la recherche et l'innovation.\n\nSouhaitez-vous creuser un de ces domaines ?"
+        }
+      ],
+      "tinder_profile": {
+        "clusters": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ],
+        "liked_careers": [
+          "Ingénieur R&D",
+          "Data Analyst",
+          "Développeur IA",
+          "Architecte"
+        ]
+      }
+    },
+    "enzo.meret@gmail.com": {
+      "password": "2bcb060d44f3e371d681032ade5260d79b63f5b5eea4a85fced4577328fdab3e",
+      "email": "",
+      "created": "2026-04-29T12:12:47.173854",
+      "profile": {
+        "persona": "etudiant",
+        "urgency": "low",
+        "timeline": "exploring",
+        "emotional_state": "curious",
+        "intent": "J'hésite entre la tech et la finance",
+        "stage": "exploring",
+        "interests": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ]
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "D'après vos centres d'intérêt pour la technologie et la finance, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Informatique et Technologies de l'Information** : Ce domaine est idéal pour ceux qui aiment travailler avec les nouvelles technologies, développer des logiciels, ou s'occuper des systèmes d'information. Il offre de nombreuses spécialisations, comme le développement de logiciels, la cybersécurité, ou encore l'intelligence artificielle.\n\n2. **Finance et Comptabilité** : Si vous êtes attiré par les chiffres, l'analyse financière et la gestion d'entreprise, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités dans des secteurs variés.\n\n3. **Fintech** : Ce domaine combine la finance et la technologie. Il est parfait pour ceux qui s'intéressent à l'innovation dans les services financiers, comme les cryptomonnaies, la blockchain, ou les solutions de paiement en ligne.\n\nSouhaitez-vous creuser un de ces domaines ?"
+        },
+        {
+          "role": "user",
+          "content": "Mode Tinder terminé. Métiers aimés : ['Ingénieur R&D', 'Data Analyst', 'Développeur IA', 'Architecte']. Clusters détectés : ['Innovation', 'Technique', 'Laboratoire']. Que recommanderais-tu comme formations ?"
+        },
+        {
+          "role": "assistant",
+          "content": "D'après vos centres d'intérêt pour l'innovation, la technique et le travail en laboratoire, voici quelques domaines qui pourraient vous correspondre :\n\n1. **Ingénierie** : Ce domaine est idéal pour ceux qui aiment innover et travailler sur des projets techniques. Il offre de nombreuses spécialisations, notamment en recherche et développement.\n\n2. **Informatique et Data Science** : Si vous êtes attiré par l'analyse de données et le développement de solutions technologiques, ce domaine pourrait vous convenir. Il est en constante évolution et offre de nombreuses opportunités.\n\n3. **Sciences et Recherche** : Travailler en laboratoire et contribuer à des avancées scientifiques peut être très gratifiant. Ce domaine est parfait pour ceux qui aiment la recherche et l'innovation.\n\nSouhaitez-vous creuser un de ces domaines ?"
+        }
+      ],
+      "tinder_profile": {
+        "clusters": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ],
+        "liked_careers": [
+          "Ingénieur R&D",
+          "Data Analyst",
+          "Développeur IA",
+          "Architecte"
+        ]
+      }
+    },
+    "baptiste": {
+      "password": "f2d81a260dea8a100dd517984e53c56a7523d96942a834b9cdc249bd4e8c7aa9",
+      "email": "",
+      "created": "2026-04-29T13:34:54.205192",
+      "profile": {
+        "persona": "lyceen",
+        "urgency": "medium",
+        "timeline": "next_year",
+        "emotional_state": "curious",
+        "intent": "Je suis étudiant en première STMG. Je recherche une formation dans le supérieur dan le domaine de la communication. ",
+        "stage": "vague_idea",
+        "interests": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ]
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "Bonjour ! Je suis ORI, ton conseiller orientation 🎓\n\nJe suis là pour t'accompagner dans tes choix d'études. Dis-moi, qu'est-ce qui t'amène ?"
+        },
+        {
+          "role": "user",
+          "content": "Mode Tinder terminé. Métiers aimés : ['Ingénieur R&D', 'Data Analyst', 'Développeur IA', 'Architecte']. Clusters détectés : ['Innovation', 'Technique', 'Laboratoire']. Que recommanderais-tu comme formations ?"
+        },
+        {
+          "role": "assistant",
+          "content": "Analyse en cours… essaie dans un instant !"
+        }
+      ],
+      "tinder_profile": {
+        "clusters": [
+          "Innovation",
+          "Technique",
+          "Laboratoire"
+        ],
+        "liked_careers": [
+          "Ingénieur R&D",
+          "Data Analyst",
+          "Développeur IA",
+          "Architecte"
+        ]
+      }
+    },
+    "mathieuaxe": {
+      "password": "f2d81a260dea8a100dd517984e53c56a7523d96942a834b9cdc249bd4e8c7aa9",
+      "email": "",
+      "created": "2026-05-03T17:24:40.026735",
+      "profile": {
+        "persona": "collegien",
+        "urgency": "low",
+        "timeline": "exploring",
+        "emotional_state": "curious",
+        "intent": "Pas de précision.",
+        "stage": "exploring"
+      },
+      "conversations": [
+        {
+          "role": "assistant",
+          "content": "Pour commencer, pourriez-vous me dire quelles sont les matières scolaires que vous appréciez le plus ? Avez-vous des passions ou des centres d'intérêt particuliers ?"
+        }
+      ],
+      "tinder_profile": {}
+    }
+  }
+}
